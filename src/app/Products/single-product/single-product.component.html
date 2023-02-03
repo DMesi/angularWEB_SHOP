@@ -1,0 +1,237 @@
+<br/>
+<div class="container">
+  <h1>{{header}} </h1>
+  </div>
+
+
+<div class="container">
+
+<div class="row top-row">
+
+
+  <div class="col-xs-12 row end-xs">
+
+    <a routerLink="/products" color="primary" mat-raised-button>
+
+      <mat-icon>
+        chevron_left
+      </mat-icon>
+      Go Back
+    </a>
+
+  </div>
+
+
+</div>
+
+
+<div class="row">
+
+<div class="col-xs-6">
+<!-- detalj -->
+<form #productDetailsForm="ngForm">
+
+
+  <!-- <div class="row">
+    <div class="col-xs-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Category:</mat-label>
+        <input type="text" matInput [(ngModel)]="product.id_categories" name="id_categories">
+      </mat-form-field>
+    </div>
+  </div> -->
+
+
+
+
+
+  <div class="row">
+
+
+  <div class="col-xs-12">
+    <mat-form-field appearance="outline">
+      <mat-label>Category:</mat-label>
+
+      <mat-select [(ngModel)]="product.id_categories" name="id_categories">
+
+          <mat-option *ngFor="let Categorie of Categories" [value]="Categorie.id"  [selected]="Categorie.id" >
+
+            {{Categorie.name}}
+
+          </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Locations:</mat-label>
+      <input type="text" matInput [(ngModel)]="product.id_location" name="id_location">
+    </mat-form-field>
+  </div>
+</div> -->
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <mat-form-field appearance="outline">
+      <mat-label>Location:</mat-label>
+
+      <mat-select [(ngModel)]="product.id_location" name="id_location">
+
+          <mat-option *ngFor="let Location of Locations" [value]="Location.id" [selected]="Location.id">
+
+            {{Location.name_location}} - {{Location.city}}
+
+
+          </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+
+  </div>
+</div>
+
+<!--DATUM-->
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <mat-form-field appearance="outline">
+      <mat-label>Datum:</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle mat matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Name:</mat-label>
+      <input type="text" matInput [(ngModel)]="product.name" name="name">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <mat-form-field appearance="outline">
+      <mat-label>Descriptions:</mat-label>
+    <textarea matInput matInput [(ngModel)]="product.description" name="description" > </textarea>
+
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Price:</mat-label>
+      <input type="text" matInput [(ngModel)]="product.price" name="price">
+
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Stock:</mat-label>
+      <input type="text" matInput [(ngModel)]="product.stock" name="stock">
+
+    </mat-form-field>
+  </div>
+</div>
+
+
+
+
+<div class="row" *ngIf="isNewProduct">
+  <div class="col-xs-6">
+
+<label>Picture:</label>
+
+      <input  (change)="slikaNovProizvod($event)" type="file" #imageUploadsTest >
+
+
+
+
+  </div>
+</div>
+
+<br/>
+
+
+
+    <!-- SLIKA -->
+    <!-- <div class="form-group">
+      <img src="{{'data:image/jpg;base64,' + product.picture}}"  />
+      </div> -->
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row" *ngIf="!isNewProduct">
+
+    <button mat-raised-button color="primary" (click)="onUpdate()">Update</button>
+    <div style="width:10px;"></div>
+    <button mat-raised-button color="warm" (click)="onDelete()">Delete</button>
+
+<!--
+    <button (click)="onRefreshParent.emit('data')">click me</button> -->
+
+
+  </div>
+
+  <div class="row between-xs" *ngIf="isNewProduct">
+    <button mat-raised-button color="primary" (click)="onAdd()">Add</button>
+
+
+
+
+
+  </div>
+
+</div>
+</div>
+
+</form>
+
+</div>
+
+<!-- upload ako je update ako je nov proizvod ne vidi se -->
+  <div class="col-xs-6" *ngIf="!isNewProduct">
+  <div class="row center-xs ">
+      <div class="image-container">
+            <img [src]="displayIMG" width="200px" >
+      </div>
+  </div>
+  <div class="col-xs-12" style="margin-left: 190px;">
+  <input hidden (change)="imageUpload($event)" type="file" #imageUploads >
+      <button type="button" mat-raised-button (click)="imageUploads.click()">Upload Image</button>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+</div>
