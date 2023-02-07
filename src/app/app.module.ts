@@ -56,6 +56,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SingleProductComponent } from './Products/single-product/single-product.component';
 import { ProComponent } from './Products/pro/pro.component';
+import { LocationsComponent } from './Locations/locations/locations.component';
+import { SingleLocationComponent } from './Locations/single-location/single-location.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { ProComponent } from './Products/pro/pro.component';
     ProductsComponent,
     SingleProductComponent,
     ProComponent,
+    LocationsComponent,
+    SingleLocationComponent,
 
 
   ],
