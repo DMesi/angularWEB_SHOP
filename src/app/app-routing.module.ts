@@ -8,6 +8,11 @@ import { SingleProductComponent } from './Products/single-product/single-product
 import { LocationsComponent } from './Locations/locations/locations.component';
 import { SingleLocationComponent } from './Locations/single-location/single-location.component';
 
+
+import { RegisterComponent } from './Account/register/register.component';
+
+import { LoginComponent } from './Account/login/login.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +36,18 @@ const routes: Routes = [
   {
     path:'locations/:id',
     component:SingleLocationComponent
+
+  },
+
+  {
+    path:'register',
+    component:RegisterComponent
+
+  },
+
+  {
+    path:'login',
+    component:LoginComponent
 
   }
 

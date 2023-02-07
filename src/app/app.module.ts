@@ -58,6 +58,8 @@ import { SingleProductComponent } from './Products/single-product/single-product
 import { ProComponent } from './Products/pro/pro.component';
 import { LocationsComponent } from './Locations/locations/locations.component';
 import { SingleLocationComponent } from './Locations/single-location/single-location.component';
+import { RegisterComponent } from './Account/register/register.component';
+import { LoginComponent } from './Account/login/login.component';
 
 
 @NgModule({
@@ -69,6 +71,8 @@ import { SingleLocationComponent } from './Locations/single-location/single-loca
     ProComponent,
     LocationsComponent,
     SingleLocationComponent,
+    RegisterComponent,
+    LoginComponent,
 
 
   ],

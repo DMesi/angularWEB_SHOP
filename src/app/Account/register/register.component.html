@@ -1,0 +1,61 @@
+<br/>
+<div class="container">
+
+  <!-- <h1>{{header}} </h1> -->
+  <h1>REGISTER:</h1>
+</div>
+
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-xs-6">
+
+<form #registerDetailsForm="ngForm">
+
+
+<div class="row">
+  <div class="col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Email:</mat-label>
+      <input type="text" matInput [(ngModel)]="user.Email" name="email">
+
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Password:</mat-label>
+      <input type="text" matInput [(ngModel)]="user.Password" name="password">
+
+    </mat-form-field>
+  </div>
+</div>
+
+
+
+<button mat-raised-button color="primary" (click)="register()">Register</button>
+<br/><br/>
+
+<div *ngIf="success" style="color: green;">Registration Successful!! Please <a routerLink="/login">Login</a></div>
+<p *ngIf="errMessage" class="alert alert-danger alert-dismissible fade show">{{errMessage}}</p>
+
+
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
